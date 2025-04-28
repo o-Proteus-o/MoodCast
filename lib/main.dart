@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Hello World!'),
-              SizedBox(height: 20),
+              SizedBox(height: 30),
               InkWell(
                 onTap: () {
                   print('Hello World!');
