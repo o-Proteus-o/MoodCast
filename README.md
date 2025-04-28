@@ -1,16 +1,42 @@
-# moodcast
 
-A new Flutter project.
+🌤️ MoodCast
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+MoodCast is an open-source Flutter app that combines live weather updates with mood-based activity suggestions.
+It's designed to help you decide what to do, based on how you feel and what the weather is like.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+✨ Features
+🔥 Live Weather Data — Pulls current weather by location using OpenWeatherMap API.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+😊 Mood Selection — Choose your current mood (Happy, Sad, Bored, Energetic).
+
+🎯 Smart Activity Suggestions — Get activity ideas tailored to your mood + the weather.
+
+🌙 Light / Dark Mode — Seamlessly switch themes.
+
+📍 Location Access — Automatically fetch weather for your current location.
+
+🌐 Open Source — Community-driven, easy to contribute!
+
+🏗️ Architecture
+MoodCast follows the Clean Architecture principles:
+
+Data Layer — Handles API calls and models.
+
+Domain Layer — Business logic, entities, and use cases.
+
+Presentation Layer — UI, screens, state management.
+
+Key Libraries Used:
+
+flutter
+
+dio
+
+flutter_bloc
+
+get_it
+
+dartz
+
