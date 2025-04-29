@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:moodcast/Features/Auth/Presentation/View/login/login_view.dart';
 
 class OnBoardingView extends StatefulWidget {
@@ -76,7 +77,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               onTap: () {
                 if (_currentPage == onboardingData.length - 1) {
                   // Navigate to the next screen
-                  Navigator.pushReplacementNamed(context, LoginView.routname);
+                  Get.to(LoginView(), transition: Transition.cupertino);
                 } else {
                   _pageController.nextPage(
                     duration: Duration(milliseconds: 300),
