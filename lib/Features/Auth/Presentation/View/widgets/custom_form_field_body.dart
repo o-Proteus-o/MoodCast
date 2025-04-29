@@ -16,6 +16,8 @@ class CustomFormFieldBody extends StatelessWidget {
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(35),
           topRight: Radius.circular(35),
+          bottomLeft: Radius.circular(35),
+          bottomRight: Radius.circular(35),
         ),
       ),
       child: Column(
@@ -37,8 +39,6 @@ class CustomFormFieldBody extends StatelessWidget {
           CustomTextField(text: "Password"),
           AccountRow(image: "assets/images/login_arrow.png", text: "Sign In"),
           ChoicesRow(signText: "Sign Up"),
-
-          // SizedBox(height: MediaQuery.of(context).size.height * 0.09),
         ],
       ),
     );
