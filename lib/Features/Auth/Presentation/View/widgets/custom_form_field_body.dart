@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:moodcast/Core/Constant/app_colors.dart';
 import 'package:moodcast/Features/Auth/Presentation/View/widgets/account_row.dart';
+import 'package:moodcast/Features/Auth/Presentation/View/widgets/alternative_signs.dart';
+import 'package:moodcast/Features/Auth/Presentation/View/widgets/auth_alternative.dart';
 import 'package:moodcast/Features/Auth/Presentation/View/widgets/choices_row.dart';
 import 'package:moodcast/Features/Auth/Presentation/View/widgets/custom_text_field.dart';
 
@@ -27,7 +30,7 @@ class CustomFormFieldBody extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 20, top: 20),
             child: Text(
-              "Welkome \nBack",
+              "Welcome \nBack",
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
@@ -39,6 +42,8 @@ class CustomFormFieldBody extends StatelessWidget {
           CustomTextField(text: "Password"),
           AccountRow(image: "assets/images/login_arrow.png", text: "Sign In"),
           ChoicesRow(signText: "Sign Up"),
+          AuthAlternative(),
+          AltenativeSigns(),
         ],
       ),
     );

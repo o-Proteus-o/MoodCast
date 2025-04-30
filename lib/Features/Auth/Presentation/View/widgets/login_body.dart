@@ -10,7 +10,7 @@ class LoginBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: 10),
         Image.asset(imagePath),
         CustomFormFieldBody(),
       ],
