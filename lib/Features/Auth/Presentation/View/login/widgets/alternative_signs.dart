@@ -12,6 +12,7 @@ class AltenativeSigns extends StatelessWidget {
         children: [
           GestureDetector(
             child: Container(
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
@@ -26,8 +27,8 @@ class AltenativeSigns extends StatelessWidget {
               ),
               child: Image.asset(
                 "assets/images/google logo.png",
-                width: 80,
-                height: 80,
+                width: 40,
+                height: 40,
               ),
             ),
           ),
