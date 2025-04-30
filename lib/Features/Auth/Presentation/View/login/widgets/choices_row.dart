@@ -17,7 +17,11 @@ class ChoicesRow extends StatelessWidget {
         children: [
           TextButton(
             onPressed: () {
-              Get.to(RegisterPage(), transition: Transition.cupertino);
+              Get.to(
+                RegisterPage(),
+                transition: Transition.cupertino,
+                duration: Duration(milliseconds: 800),
+              );
             },
             child: Text(
               signText,
