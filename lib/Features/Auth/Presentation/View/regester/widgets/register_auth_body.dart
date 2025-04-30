@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:moodcast/Core/Constant/app_colors.dart';
-import 'package:moodcast/Features/Auth/Presentation/View/widgets/account_row.dart';
-import 'package:moodcast/Features/Auth/Presentation/View/widgets/alternative_signs.dart';
-import 'package:moodcast/Features/Auth/Presentation/View/widgets/auth_alternative.dart';
-import 'package:moodcast/Features/Auth/Presentation/View/widgets/choices_row.dart';
-import 'package:moodcast/Features/Auth/Presentation/View/widgets/custom_text_field.dart';
+import 'package:moodcast/Features/Auth/Presentation/View/login/widgets/alternative_signs.dart';
+import 'package:moodcast/Features/Auth/Presentation/View/login/widgets/auth_alternative.dart';
+import 'package:moodcast/Features/Auth/Presentation/View/login/widgets/custom_text_field.dart';
+import 'package:moodcast/Features/Auth/Presentation/View/regester/widgets/back_to_login.dart';
+import 'package:moodcast/Features/Auth/Presentation/View/regester/widgets/register_triger.dart';
 
-class CustomFormFieldBody extends StatelessWidget {
-  const CustomFormFieldBody({super.key});
+class RegisterAuthBody extends StatelessWidget {
+  const RegisterAuthBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +37,14 @@ class CustomFormFieldBody extends StatelessWidget {
               ),
             ),
           ),
+          CustomTextField(text: "Name"),
           CustomTextField(text: "Email"),
           CustomTextField(text: "Password"),
-          AccountRow(image: "assets/images/login_arrow.png", text: "Sign In"),
-          ChoicesRow(signText: "Sign Up"),
+          RegisterTriger(
+            text: "Register",
+            image: "assets/images/register_arrow.png",
+          ),
+          RegisterOrLogin(),
           AuthAlternative(),
           AltenativeSigns(),
         ],

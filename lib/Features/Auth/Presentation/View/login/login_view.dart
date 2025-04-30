@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moodcast/Core/Constant/app_colors.dart';
-import 'package:moodcast/Features/Auth/Presentation/View/widgets/login_body.dart';
+import 'package:moodcast/Features/Auth/Presentation/View/login/widgets/login_body.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});

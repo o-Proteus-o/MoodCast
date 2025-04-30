@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:moodcast/Core/Constant/app_colors.dart';
+import 'package:moodcast/Features/Auth/Presentation/View/regester/register_view.dart';
 
 class ChoicesRow extends StatelessWidget {
   final String signText;
-  const ChoicesRow({super.key, required this.signText});
+  final String forget;
+  const ChoicesRow({super.key, required this.signText, required this.forget});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +16,9 @@ class ChoicesRow extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.to(RegisterPage(), transition: Transition.cupertino);
+            },
             child: Text(
               signText,
               style: TextStyle(
@@ -30,7 +35,7 @@ class ChoicesRow extends StatelessWidget {
               // Add your sign-up action here
             },
             child: Text(
-              "Forget Password?",
+              forget,
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
