@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:moodcast/Core/Constant/app_colors.dart';
 
 class AccountRow extends StatelessWidget {
