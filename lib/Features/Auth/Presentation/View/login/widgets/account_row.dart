@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:moodcast/Core/Constant/app_colors.dart';
 
 class AccountRow extends StatelessWidget {
@@ -21,13 +22,18 @@ class AccountRow extends StatelessWidget {
               color: AppColors.primaryColor,
             ),
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            decoration: BoxDecoration(
-              color: AppColors.primaryColor,
-              borderRadius: BorderRadius.circular(18),
+          GestureDetector(
+            onTap: () {
+              // Get.to(page);
+            },
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              decoration: BoxDecoration(
+                color: AppColors.primaryColor,
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: Image.asset(image),
             ),
-            child: Image.asset(image),
           ),
         ],
       ),
