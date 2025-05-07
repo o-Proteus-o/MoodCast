@@ -18,11 +18,10 @@ class HomeView extends StatelessWidget {
                 Row(
                   children: [
                     RowOfData(text: "10 %", icon: Icons.water_drop),
-                    RowOfData(text: "40 KM/h", icon: Icons.water_drop),
+                    RowOfData(text: "40 KM/h", icon: Icons.wind_power),
                     RowOfData(text: "40 %", icon: Icons.cloud_rounded),
                   ],
                 ),
-                ChoiceChip(label: Text(""), selected: true),
               ],
             ),
           ),
