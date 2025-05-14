@@ -21,7 +21,9 @@ class _RegisterAuthBodyState extends State<RegisterAuthBody> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   bool obscureText = true;
-  late String name, password, email;
+  String? name;
+  String? email;
+  String? password;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -64,17 +66,27 @@ class _RegisterAuthBodyState extends State<RegisterAuthBody> {
                 email = val!;
               },
               text: "Email",
+              validator: (val) {
+                if (val == null || val.isEmpty) {
+                  return 'Please enter your email';
+                }
+                if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(val)) {
+                  return 'Please enter a valid email';
+                }
+                return null;
+              },
             ),
             CustomPasswordField(
               obscureText: obscureText,
               suffixIcon: GestureDetector(
                 onTap: () {
                   obscureText = !obscureText;
+                  setState(() {});
                 },
                 child:
                     obscureText
-                        ? Icon(LucideIcons.eyeOff)
-                        : Icon(LucideIcons.eye),
+                        ? Icon(LucideIcons.eye)
+                        : Icon(LucideIcons.eyeOff),
               ),
               text: "Password",
               onSaved: (val) {
@@ -83,11 +95,14 @@ class _RegisterAuthBodyState extends State<RegisterAuthBody> {
             ),
             RegisterTriger(
               onTap: () {
-                context.read<RegisterCubit>().signUpWithEmailAndPassword(
-                  name: name,
-                  email: email,
-                  password: password,
-                );
+                formkey.currentState!.save();
+                if (formkey.currentState!.validate()) {
+                  context.read<RegisterCubit>().signUpWithEmailAndPassword(
+                    name: name!,
+                    email: email!,
+                    password: password!,
+                  );
+                }
               },
               text: "Register",
               image: "assets/images/register_arrow.png",

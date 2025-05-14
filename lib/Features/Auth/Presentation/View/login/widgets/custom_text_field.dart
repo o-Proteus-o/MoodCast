@@ -6,12 +6,14 @@ class CustomTextField extends StatelessWidget {
   final void Function(String?)? onSaved;
   final bool obscureText;
   final Widget? suffixIcon;
+  final String? Function(String?)? validator;
   const CustomTextField({
     super.key,
     required this.text,
     this.onSaved,
     this.obscureText = false,
     this.suffixIcon,
+    this.validator,
   });
 
   @override
@@ -21,12 +23,14 @@ class CustomTextField extends StatelessWidget {
       child: TextFormField(
         obscureText: obscureText,
         onSaved: onSaved,
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return "Please enter your $text";
-          }
-          return null;
-        },
+        validator:
+            validator ??
+            (value) {
+              if (value == null || value.isEmpty) {
+                return "Please enter your $text";
+              }
+              return null;
+            },
         decoration: InputDecoration(
           labelText: text,
           suffixIcon: suffixIcon,

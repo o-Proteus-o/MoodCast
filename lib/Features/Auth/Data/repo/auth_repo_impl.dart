@@ -11,7 +11,14 @@ class AuthRepoImpl extends AuthRepo {
 
   AuthRepoImpl({required this.firebaseAuthServices});
   @override
-  Future<Either<Failure, UserEntitny>> signInWithEmailAndPassword(
+  @override
+  Future<void> signOut() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, UserEntitny>> signUpWithEmailAndPassword(
+    String name,
     String email,
     String password,
   ) async {
@@ -30,16 +37,11 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<void> signOut() {
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Either<Failure, UserEntitny>> signUpWithEmailAndPassword(
-    String name,
+  Future<Either<Failure, UserEntitny>> signInWithEmailAndPassword(
     String email,
     String password,
   ) {
+    // TODO: implement signInWithEmailAndPassword
     throw UnimplementedError();
   }
 }

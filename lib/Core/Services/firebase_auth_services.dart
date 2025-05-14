@@ -19,7 +19,8 @@ class FirebaseAuthServices {
       } else if (e.code == 'email-already-in-use') {
         throw MyExeption('The account already exists for that email.');
       }
-      throw MyExeption("There was an error creating the account");
+      log(e.toString());
+      throw MyExeption("$e = There was an error creating the account");
     } catch (e) {
       log('Error: $e');
       throw MyExeption("There was an error creating the account");
