@@ -4,7 +4,13 @@ import 'package:moodcast/Core/Constant/app_colors.dart';
 class RegisterTriger extends StatelessWidget {
   final String text;
   final String image;
-  const RegisterTriger({super.key, required this.text, required this.image});
+  final void Function()? onTap;
+  const RegisterTriger({
+    super.key,
+    required this.text,
+    required this.image,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +27,16 @@ class RegisterTriger extends StatelessWidget {
               color: AppColors.primaryColor,
             ),
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            decoration: BoxDecoration(
-              color: AppColors.registerPageColor,
-              borderRadius: BorderRadius.circular(18),
+          GestureDetector(
+            onTap: onTap,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              decoration: BoxDecoration(
+                color: AppColors.registerPageColor,
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: Image.asset(image),
             ),
-            child: Image.asset(image),
           ),
         ],
       ),

@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:moodcast/Core/Services/get_it_service.dart';
 import 'package:moodcast/Core/Utils/Routes/on_generated_routes.dart';
 import 'package:moodcast/Features/OnBoarding/Presentation/view/on_boarding_view.dart';
 import 'package:moodcast/firebase_options.dart';
@@ -9,11 +10,13 @@ import 'package:moodcast/firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const MyApp());
+
+  setup();
+  runApp(const MoodCast());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MoodCast extends StatelessWidget {
+  const MoodCast({super.key});
 
   @override
   Widget build(BuildContext context) {

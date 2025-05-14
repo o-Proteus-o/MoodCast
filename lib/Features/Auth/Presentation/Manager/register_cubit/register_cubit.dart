@@ -10,7 +10,7 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   final AuthRepo authRepo;
 
-  Future<void> register({
+  Future<void> signUpWithEmailAndPassword({
     required String name,
     required String email,
     required String password,
