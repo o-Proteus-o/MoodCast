@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:moodcast/Core/Constant/app_constant.dart';
+import 'package:moodcast/Core/Services/shared_prefrences_singelton.dart';
 import 'package:moodcast/Features/Auth/Presentation/View/login/login_view.dart';
 
 class OnBoardingView extends StatefulWidget {
@@ -97,6 +99,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             child: GestureDetector(
               onTap: () {
                 if (_currentPage == onboardingData.length - 1) {
+                  SharedPrefrencesSingelton.setBool(isViewSeen, true);
                   Get.to(LoginView(), transition: Transition.fade);
                 } else {
                   _pageController.nextPage(
