@@ -14,6 +14,7 @@ class RegisterBodyBlocConsumer extends StatelessWidget {
       listener: (context, state) {
         if (state is RegisterSuccess) {
           Get.snackbar("hi", "success");
+          // Get.to(HomeView());
         }
         if (state is RegisterFailure) {
           Get.snackbar("Error", state.message);

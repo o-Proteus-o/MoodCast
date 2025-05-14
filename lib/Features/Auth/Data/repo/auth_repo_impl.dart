@@ -17,7 +17,7 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, UserEntitny>> signUpWithEmailAndPassword(
+  Future<Either<Failure, UserEntity>> signUpWithEmailAndPassword(
     String name,
     String email,
     String password,
@@ -37,11 +37,20 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, UserEntitny>> signInWithEmailAndPassword(
+  Future<Either<Failure, UserEntity>> signInWithEmailAndPassword(
     String email,
     String password,
-  ) {
-    // TODO: implement signInWithEmailAndPassword
-    throw UnimplementedError();
+  ) async {
+    try {
+      var user = await firebaseAuthServices.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return right(UserModel.fromFirebaseUser(user));
+    } on MyExeption catch (e) {
+      return left(ServerFailure(e.toString()));
+    } catch (e) {
+      return left(ServerFailure("There was an error signing in"));
+    }
   }
 }

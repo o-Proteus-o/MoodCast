@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:moodcast/Core/Constant/app_colors.dart';
-import 'package:moodcast/Features/Home/Presentation/Views/home_view/home_view.dart';
 
 class AccountRow extends StatelessWidget {
   final String text;
   final String image;
-  const AccountRow({super.key, required this.text, required this.image});
+  final void Function()? onTap;
+  const AccountRow({
+    super.key,
+    required this.text,
+    required this.image,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +28,7 @@ class AccountRow extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () {
-              Get.to(
-                HomeView(),
-                transition: Transition.cupertino,
-                duration: Duration(milliseconds: 900),
-              );
-            },
+            onTap: onTap,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               decoration: BoxDecoration(
