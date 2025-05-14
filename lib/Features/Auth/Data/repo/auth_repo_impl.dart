@@ -1,28 +1,28 @@
+import 'package:dartz/dartz.dart';
+import 'package:moodcast/Core/Errors/failures.dart';
+import 'package:moodcast/Features/Auth/Domain/entities/user_entity.dart';
 import 'package:moodcast/Features/Auth/Domain/repo/auth_repo.dart';
 
 class AuthRepoImpl extends AuthRepo {
   @override
-  Future<void> signInWithEmailAndPassword({
+  Future<Either<Failure, UserEntitny>> signInWithEmailAndPassword({
     required String email,
     required String password,
   }) {
-    // TODO: implement signInWithEmailAndPassword
     throw UnimplementedError();
   }
 
   @override
   Future<void> signOut() {
-    // TODO: implement signOut
     throw UnimplementedError();
   }
 
   @override
-  Future<void> signUpWithEmailAndPassword({
+  Future<Either<Failure, UserEntitny>> signUpWithEmailAndPassword({
     required String name,
     required String email,
     required String password,
   }) {
-    // TODO: implement signUpWithEmailAndPassword
     throw UnimplementedError();
   }
 }
