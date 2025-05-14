@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:moodcast/Features/Auth/Presentation/View/login/login_view.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
+  static const onBoeading = "onBorading";
 
   @override
   State<OnBoardingView> createState() => _OnBoardingViewState();
@@ -16,19 +18,19 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   final List<Map<String, String>> onboardingData = [
     {
       "title": "🌤️ Welcome to MoodCast",
-      // "image": "assets/weather/one.svg",
+      "image": "assets/weather/one.svg",
       "description":
           "Discover how the weather affects your mood.\nMoodCast helps you tune in, reflect, and \nstay balanced—rain or shine.",
     },
     {
       "title": "🌦️ Mood Meets Weather",
-      // "image": "assets/weather/two.svg",
+      "image": "assets/weather/two.svg",
       "description":
           "We combine local weather data with \nemotional insightsto help you track patterns, \nreflect, and understand yourself better.",
     },
     {
       "title": "🌈 Start Your Mood Journey",
-      // "image": "assets/weather/four.svg",
+      "image": "assets/weather/four.svg",
       "description":
           "Ready to see how sunshine lifts your \nspirits—or how rain soothes your soul? \nLet’s personalize your experience.",
     },
@@ -58,8 +60,15 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
-                  // Image.asset(onboardingData[index]["image"]!),
-                  // SizedBox(height: 16),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: SvgPicture.asset(
+                      onboardingData[index]['image']!,
+                      height: 200,
+                      width: 200,
+                    ),
+                  ),
+                  SizedBox(height: 16),
                   Text(
                     onboardingData[index]['description']!,
                     style: TextStyle(

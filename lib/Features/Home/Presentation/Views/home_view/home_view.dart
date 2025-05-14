@@ -4,7 +4,7 @@ import 'package:moodcast/Features/Home/Presentation/Views/home_view/widgets/row_
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
-
+  static const home = "home";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

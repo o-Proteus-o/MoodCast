@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "718230045100",
+    "project_id": "mfk-2f025",
+    "storage_bucket": "mfk-2f025.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718230045100:android:4380b2ddb84c191326fa09",
+        "android_client_info": {
+          "package_name": "com.example.moodcast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718230045100-na7l8upm9mo62q2h94ftf9qcrio3qsgc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4jJET-gV-EDXmVpCH64jgPc3XRBrUNzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718230045100-na7l8upm9mo62q2h94ftf9qcrio3qsgc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
