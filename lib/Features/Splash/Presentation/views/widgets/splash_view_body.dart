@@ -15,8 +15,26 @@ class SplashViewBody extends StatefulWidget {
 class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   void initState() {
-    executeNavigation();
     super.initState();
+    _navigateAfterSplash();
+  }
+
+  Future<void> _navigateAfterSplash() async {
+    await Future.delayed(const Duration(seconds: 3));
+    bool onBoardingIsSeen = SharedPrefrencesSingelton.getBool(isViewSeen);
+    if (onBoardingIsSeen) {
+      Get.off(
+        LoginView(),
+        transition: Transition.cupertino,
+        duration: Duration(milliseconds: 250),
+      );
+    } else {
+      Get.off(
+        OnBoardingView(),
+        transition: Transition.cupertino,
+        duration: Duration(milliseconds: 250),
+      );
+    }
   }
 
   @override
@@ -27,30 +45,10 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         Center(
           child: Text(
             "Moodcast",
-            style: Theme.of(context).textTheme.headlineLarge,
+            style: TextStyle(fontFamily: "Amiga", fontSize: 38),
           ),
         ),
       ],
     );
-  }
-
-  void executeNavigation() {
-    bool onBoardingIsSenn = SharedPrefrencesSingelton.getBool(isViewSeen);
-    Future.delayed(const Duration(seconds: 3));
-    () {
-      if (onBoardingIsSenn) {
-        Get.to(
-          LoginView(),
-          transition: Transition.cupertino,
-          duration: Duration(milliseconds: 250),
-        );
-      } else {
-        Get.to(
-          OnBoardingView(),
-          transition: Transition.cupertino,
-          duration: Duration(milliseconds: 250),
-        );
-      }
-    };
   }
 }

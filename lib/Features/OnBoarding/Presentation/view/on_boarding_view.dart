@@ -98,8 +98,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     : MediaQuery.of(context).size.width * 0.05,
             child: GestureDetector(
               onTap: () {
+                SharedPrefrencesSingelton.setBool(isViewSeen, true);
                 if (_currentPage == onboardingData.length - 1) {
-                  SharedPrefrencesSingelton.setBool(isViewSeen, true);
                   Get.to(LoginView(), transition: Transition.fade);
                 } else {
                   _pageController.nextPage(
