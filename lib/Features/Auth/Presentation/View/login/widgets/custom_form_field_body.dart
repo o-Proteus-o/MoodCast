@@ -94,7 +94,7 @@ class _CustomFormFieldBodyState extends State<CustomFormFieldBody> {
             ),
             ChoicesRow(signText: "Sign Up", forget: "Forget Password?"),
             AuthAlternative(),
-            AltenativeSigns(),
+            AltenativeSigns(onGoogle: () {}, onFacebook: () {}),
           ],
         ),
       ),

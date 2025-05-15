@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AltenativeSigns extends StatelessWidget {
-  const AltenativeSigns({super.key});
+  final void Function() onGoogle;
+  final void Function() onFacebook;
+  const AltenativeSigns({
+    super.key,
+    required this.onGoogle,
+    required this.onFacebook,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +17,7 @@ class AltenativeSigns extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           GestureDetector(
+            onTap: onGoogle,
             child: Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
@@ -34,6 +41,7 @@ class AltenativeSigns extends StatelessWidget {
           ),
           SizedBox(width: 20),
           GestureDetector(
+            onTap: onFacebook,
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,

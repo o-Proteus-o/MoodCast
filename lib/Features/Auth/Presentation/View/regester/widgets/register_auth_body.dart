@@ -109,7 +109,7 @@ class _RegisterAuthBodyState extends State<RegisterAuthBody> {
             ),
             RegisterOrLogin(),
             AuthAlternative(),
-            AltenativeSigns(),
+            AltenativeSigns(onGoogle: () {}, onFacebook: () {}),
           ],
         ),
       ),
