@@ -24,6 +24,7 @@ dependencies:
   lucide_icons_flutter: ^3.0.0
   modal_progress_hud_nsn: ^0.5.1
   shared_preferences: ^2.5.3
+  flutter_native_splash: ^2.4.6
 
 dev_dependencies:
   flutter_launcher_icons: ^0.14.3
@@ -32,9 +33,6 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
@@ -42,6 +40,7 @@ flutter:
     - assets/images/
     - assets/lotties/
     - assets/weather/
+    - assets/icon/
 
   fonts:
     - family: Amiga
@@ -55,3 +54,8 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.png"
+  min_sdk_android: 21
