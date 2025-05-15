@@ -24,13 +24,13 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     bool onBoardingIsSeen = SharedPrefrencesSingelton.getBool(isViewSeen);
     if (onBoardingIsSeen) {
       Get.off(
-        LoginView(),
+        () => LoginView(),
         transition: Transition.cupertino,
         duration: Duration(milliseconds: 250),
       );
     } else {
       Get.off(
-        OnBoardingView(),
+        () => OnBoardingView(),
         transition: Transition.cupertino,
         duration: Duration(milliseconds: 250),
       );
