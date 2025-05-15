@@ -12,8 +12,8 @@ class AuthRepoImpl extends AuthRepo {
   AuthRepoImpl({required this.firebaseAuthServices});
   @override
   @override
-  Future<void> signOut() {
-    throw UnimplementedError();
+  Future<void> signOut() async {
+    await firebaseAuthServices.signOut();
   }
 
   @override
@@ -51,6 +51,18 @@ class AuthRepoImpl extends AuthRepo {
       return left(ServerFailure(e.toString()));
     } catch (e) {
       return left(ServerFailure("There was an error signing in"));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithGoogle() async {
+    try {
+      var user = await firebaseAuthServices.signInWithGoogle();
+      return right(UserModel.fromFirebaseUser(user.user!));
+    } on MyExeption catch (e) {
+      return left(ServerFailure(e.toString()));
+    } catch (e) {
+      return left(ServerFailure("There was an error signing in with Google"));
     }
   }
 }
