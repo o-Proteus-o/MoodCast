@@ -39,6 +39,7 @@ dependencies:
   flutter_svg: ^2.1.0
   get: ^4.7.2
   get_it: ^8.0.3
+  google_sign_in: ^6.3.0
   lucide_icons_flutter: ^3.0.0
   modal_progress_hud_nsn: ^0.5.1
   shared_preferences: ^2.5.3
