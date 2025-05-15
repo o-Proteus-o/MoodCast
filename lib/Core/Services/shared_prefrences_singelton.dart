@@ -11,7 +11,7 @@ class SharedPrefrencesSingelton {
     _instant!.setBool(key, value);
   }
 
-  static getBool(String key) {
-    _instant!.getBool(key);
+  static bool getBool(String key, {bool defaultValue = false}) {
+    return _instant?.getBool(key) ?? defaultValue;
   }
 }
