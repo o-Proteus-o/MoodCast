@@ -17,6 +17,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
+  flutter_native_splash: ^2.4.6
   flutter_svg: ^2.1.0
   get: ^4.7.2
   get_it: ^8.0.3
@@ -24,7 +25,6 @@ dependencies:
   lucide_icons_flutter: ^3.0.0
   modal_progress_hud_nsn: ^0.5.1
   shared_preferences: ^2.5.3
-  flutter_native_splash: ^2.4.6
 
 dev_dependencies:
   flutter_launcher_icons: ^0.14.3
@@ -35,7 +35,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
     - assets/lotties/
@@ -54,6 +53,12 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+
+flutter_native_splash:
+  color: "#42a5f5"
+  image: "assets/icon/logo.png"
+  color_dark: "#42a5f5"
+
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
