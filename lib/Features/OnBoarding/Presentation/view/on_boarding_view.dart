@@ -8,7 +8,7 @@ import 'package:moodcast/Features/Auth/Presentation/View/login/login_view.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
-  static const onBoeading = "onBorading";
+  static const onBoarding = "onBorading";
 
   @override
   State<OnBoardingView> createState() => _OnBoardingViewState();

@@ -14,4 +14,12 @@ class SharedPrefrencesSingelton {
   static bool getBool(String key, {bool defaultValue = false}) {
     return _instant?.getBool(key) ?? defaultValue;
   }
+
+  static Future<void> setAuthDone(bool value) async {
+    await _instant?.setBool('auth_done', value);
+  }
+
+  static bool isAuthDone() {
+    return _instant?.getBool('auth_done') ?? false;
+  }
 }

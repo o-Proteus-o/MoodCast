@@ -11,14 +11,14 @@ class RegisterCubit extends Cubit<RegisterState> {
   final AuthRepo authRepo;
 
   Future<void> signUpWithEmailAndPassword({
-    required String name,
+    required String nameUser,
     required String email,
     required String password,
   }) async {
     emit(RegisterLoading());
 
     final result = await authRepo.signUpWithEmailAndPassword(
-      name,
+      nameUser,
       email,
       password,
     );

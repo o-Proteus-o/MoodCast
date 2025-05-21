@@ -98,7 +98,7 @@ class _RegisterAuthBodyState extends State<RegisterAuthBody> {
                 formkey.currentState!.save();
                 if (formkey.currentState!.validate()) {
                   context.read<RegisterCubit>().signUpWithEmailAndPassword(
-                    name: name!,
+                    nameUser: name!,
                     email: email!,
                     password: password!,
                   );
