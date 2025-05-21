@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:moodcast/Core/Constant/app_colors.dart';
+import 'package:moodcast/Core/Services/shared_prefrences_singelton.dart';
 import 'package:moodcast/Features/Auth/Presentation/Manager/login_cubit/login_cubit.dart';
 import 'package:moodcast/Features/Auth/Presentation/View/login/widgets/account_row.dart';
 import 'package:moodcast/Features/Auth/Presentation/View/login/widgets/alternative_signs.dart';
@@ -9,6 +11,7 @@ import 'package:moodcast/Features/Auth/Presentation/View/login/widgets/auth_alte
 import 'package:moodcast/Features/Auth/Presentation/View/login/widgets/choices_row.dart';
 import 'package:moodcast/Features/Auth/Presentation/View/login/widgets/custom_text_field.dart';
 import 'package:moodcast/Features/Auth/Presentation/View/regester/widgets/custom_password_field.dart';
+import 'package:moodcast/Features/Home/Presentation/Views/home_view/home_view.dart';
 
 class CustomFormFieldBody extends StatefulWidget {
   const CustomFormFieldBody({super.key});
@@ -79,13 +82,15 @@ class _CustomFormFieldBodyState extends State<CustomFormFieldBody> {
             AccountRow(
               image: "assets/images/login_arrow.png",
               text: "Sign In",
-              onTap: () {
+              onTap: () async {
                 formk.currentState!.save();
                 if (formk.currentState!.validate()) {
                   context.read<LoginCubit>().signInWithEmailAndPassword(
                     email: email,
                     password: password,
                   );
+                  Get.off(() => HomeView());
+                  await SharedPrefrencesSingelton.setAuthDone(true);
                 } else {
                   autovalidateMode = AutovalidateMode.always;
                   setState(() {});

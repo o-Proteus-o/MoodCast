@@ -8,7 +8,7 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
   switch (setting.name) {
     case SplashView.splash:
       return MaterialPageRoute(builder: (context) => const SplashView());
-    case OnBoardingView.onBoeading:
+    case OnBoardingView.onBoarding:
       return MaterialPageRoute(builder: (context) => const OnBoardingView());
     case LoginView.routname:
       return MaterialPageRoute(builder: (context) => const LoginView());
