@@ -2,6 +2,9 @@
 
 > **MoodCast** is your personal **weather-mood companion**. It reads how you feel under certain weather and gives uplifting suggestions—be it activities, playlists, or little mood boosts.  
 > Let this cloud of positivity guide your day. ☁️🌞
+>
+> > ⚠️ MoodCast is currently in **maintenance mode**.  
+> The app is being improved and polished. Expect new features soon! ✨  
 
 ---
 
